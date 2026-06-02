@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login | Harps Tech</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"/>
+  <style>
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+    }
+    .glass {
+      background: rgba(15, 23, 42, 0.85);
+      backdrop-filter: blur(20px);
+    }
+    .neon {
+      text-shadow: 0 0 15px #00ff88;
+    }
+  </style>
+</head>
+<body class="bg-zinc-950 text-white min-h-screen flex items-center justify-center">
+
+  <div class="glass border border-[#00ff88]/30 rounded-3xl w-full max-w-md p-10 mx-4 shadow-2xl">
+    
+    <!-- Logo -->
+    <div class="flex justify-center mb-8">
+      <div class="w-16 h-16 bg-[#00ff88] text-black font-black text-4xl flex items-center justify-center rounded-2xl">
+        HT
+      </div>
+    </div>
+
+    <h1 class="text-3xl font-bold text-center mb-2 neon">Harps Tech</h1>
+    <p class="text-center text-zinc-400 mb-10">Secure Login • Elite Access</p>
+
+    <form id="loginForm" class="space-y-6">
+      <div>
+        <label class="block text-sm text-zinc-400 mb-2">Username / Email</label>
+        <input type="text" id="username" 
+               class="w-full px-6 py-4 bg-zinc-900 border border-zinc-700 rounded-2xl focus:border-[#00ff88] outline-none transition"
+               placeholder="ayomide@harps.tech" required>
+      </div>
+
+      <div>
+        <label class="block text-sm text-zinc-400 mb-2">Password</label>
+        <input type="password" id="password" 
+               class="w-full px-6 py-4 bg-zinc-900 border border-zinc-700 rounded-2xl focus:border-[#00ff88] outline-none transition"
+               placeholder="••••••••" required>
+      </div>
+
+      <div class="flex items-center justify-between text-sm">
+        <label class="flex items-center gap-2">
+          <input type="checkbox" class="accent-[#00ff88]">
+          <span>Remember me</span>
+        </label>
+        <a href="#" class="text-[#00ff88] hover:underline">Forgot Password?</a>
+      </div>
+
+      <button type="button" onclick="handleLogin()" 
+              class="w-full bg-[#00ff88] text-black font-bold py-5 rounded-2xl text-lg hover:bg-white transition">
+        SIGN IN
+      </button>
+    </form>
+
+    <div class="text-center mt-8 text-xs text-zinc-500">
+      © 2026 Harps Tech • All Rights Reserved
+    </div>
+  </div>
+
+  <script>
+    function handleLogin() {
+      const username = document.getElementById('username').value;
+      const password = document.getElementById('password').value;
+
+      if (username && password) {
+        alert("✅ Login Successful! (Demo)\nWelcome back, Ayomide!");
+        // You can redirect to dashboard here later
+        // window.location.href = "index.html";
+      } else {
+        alert("Please fill in all fields");
+      }
+    }
+
+    // Allow pressing Enter to login
+    document.getElementById('loginForm').addEventListener('keypress', function(e) {
+      if (e.key === 'Enter') {
+        handleLogin();
+      }
+    });
+  </script>
+</body>
+      </html>
